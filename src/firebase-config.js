@@ -14,6 +14,16 @@ const firebaseConfig = {
   appId: "1:1002664811691:web:c003e8cadb7715d8002bee",
 };
 
+// alternate === from clg mail
+// const firebaseConfig = {
+// apiKey: "AIzaSyA5Qv_E__lJj6WgTct0rnlcH2akHRaMlzs",
+// authDomain: "blogapp-43452.firebaseapp.com",
+// projectId: "blogapp-43452",
+// storageBucket: "blogapp-43452.appspot.com",
+// messagingSenderId: "463081967162",
+// appId: "1:463081967162:web:f0446131f8e01df5d6af03",
+// };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);

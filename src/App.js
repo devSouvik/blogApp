@@ -6,6 +6,7 @@ import CreatePost from "./pages/CreatePost";
 import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
+import Profile from "./pages/Profile";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -14,7 +15,7 @@ function App() {
     signOut(auth).then(() => {
       localStorage.clear();
       setIsAuth(false);
-      window.location.pathname = "/login";
+      window.location.pathname = "/";
     });
   };
 
@@ -26,11 +27,11 @@ function App() {
           <Link to="/login">Login</Link>
         ) : (
           <>
-            {/* <button onClick={signuUserOut}>Sign Out</button> */}
             <span onClick={signuUserOut} className="signOut">
               Sign out
             </span>
             <Link to="/createpost">Create Post</Link>
+            <Link to="/profile">Profile</Link>
           </>
         )}
       </nav>
@@ -45,6 +46,11 @@ function App() {
           path="/createpost"
           exact
           element={<CreatePost isAuth={isAuth} />}
+        ></Route>
+        <Route
+          path="/profile"
+          exact
+          element={<Profile isAuth={isAuth} />}
         ></Route>
       </Routes>
     </Router>

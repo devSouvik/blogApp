@@ -191,6 +191,7 @@ textarea {
 .signOut {
   margin-left: 1%;
   margin-right: 1%;
+  cursor: pointer;
   color: white;
   font-size: 25px;
 }
