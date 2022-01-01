@@ -5,18 +5,14 @@ function Profile({ isAuth }) {
   return (
     <>
       {isAuth && (
-        <div className="body">
-          <img
-            src={auth.currentUser.photoURL}
-            alt="User Image"
-            className="avatar"
-          />
-          <p>
-            <strong>Name </strong>: {auth.currentUser.displayName}
-          </p>
-          <p>
-            <strong> Email </strong>: {auth.currentUser.email}
-          </p>
+        <div class="card">
+          <img src={auth.currentUser.photoURL} style={{ width: "100%" }} />
+          <div class="container">
+            <h4>
+              <b>{auth.currentUser.displayName}</b>
+            </h4>
+            <p>{auth.currentUser.email}</p>
+          </div>
         </div>
       )}
     </>
