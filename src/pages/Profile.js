@@ -15,7 +15,7 @@ function Profile({ isAuth }) {
             <strong>Name </strong>: {auth.currentUser.displayName}
           </p>
           <p>
-            <strong> Email Address </strong>: {auth.currentUser.email}
+            <strong> Email </strong>: {auth.currentUser.email}
           </p>
         </div>
       )}
