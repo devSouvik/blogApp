@@ -8,11 +8,10 @@ import {
 } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import Typography from "@mui/material/Typography";
-// import ReactHtmlParser from "react-html-parser";
 
 function Home({ isAuth }) {
   const [postList, setPostList] = useState([]);
-  // const postsCollectionRef =;
+  // const postsCollectionRef = collection(db, "posts");
 
   useEffect(() => {
     const getPosts = async () => {
@@ -27,7 +26,7 @@ function Home({ isAuth }) {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
     // console.log(postList);
-    setPostList((previous) => previous.filter((value) => value.id !== id)); // automatically state updated after every
+    setPostList((previous) => previous.filter((value) => value.id !== id)); // automatically state updated after every post deletion
   };
 
   return (
@@ -55,8 +54,6 @@ function Home({ isAuth }) {
               className="postTextContainer"
               dangerouslySetInnerHTML={{ __html: post.postText }} //formats html tags to normal text
             />
-            {/* </div> */}
-            {/* <h3>- by {post.author.name}</h3> */}
             <Typography
               style={{ fontSize: "1rem", color: "#6c757d", marginTop: 10 }}
               color="text.secondary"
