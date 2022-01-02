@@ -150,8 +150,6 @@ textarea {
   max-height: 630px;
   background-color: rgb(34, 33, 33);
   color: #eeeeee;
-  /* color: black;
-  background-color: white; */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 20px;
   padding: 20px;
@@ -165,10 +163,10 @@ textarea {
 }
 
 .postHeader .title {
-  flex: 50%;
+  flex: 90%;
 }
 .postHeader .deletePost {
-  flex: 50%;
+  flex: 10%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
