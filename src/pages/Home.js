@@ -7,14 +7,15 @@ import {
   getDocs,
 } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
+// import ReactHtmlParser from "react-html-parser";
 
 function Home({ isAuth }) {
   const [postList, setPostList] = useState([]);
-  const postsCollectionRef = collection(db, "posts");
+  // const postsCollectionRef =;
 
   useEffect(() => {
     const getPosts = async () => {
-      const data = await getDocs(postsCollectionRef);
+      const data = await getDocs(collection(db, "posts"));
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
 
@@ -24,6 +25,8 @@ function Home({ isAuth }) {
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
+    // console.log(postList);
+    setPostList((previous) => previous.filter((value) => value.id !== id));
   };
 
   return (
@@ -47,7 +50,11 @@ function Home({ isAuth }) {
                 )}
               </div>
             </div>
-            <div className="postTextContainer">{post.postText}</div>
+            <div
+              className="postTextContainer"
+              dangerouslySetInnerHTML={{ __html: post.postText }}
+            />
+            {/* </div> */}
             <h3>@{post.author.name}</h3>
           </div>
         );
