@@ -145,10 +145,13 @@ textarea {
 }
 
 .homePage .post {
-  width: 600px;
+  width: 800px;
   height: auto;
-  max-height: 600px;
-  background-color: rgb(250, 250, 250);
+  max-height: 630px;
+  background-color: rgb(34, 33, 33);
+  color: #eeeeee;
+  /* color: black;
+  background-color: white; */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 20px;
   padding: 20px;
@@ -180,6 +183,7 @@ textarea {
 }
 
 .post .postTextContainer {
+  border-radius: 5px;
   word-wrap: break-word;
   height: auto;
   max-height: 400px;
