@@ -8,6 +8,7 @@ import {
 } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import Typography from "@mui/material/Typography";
+import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
 
 function Home({ isAuth }) {
   const [postList, setPostList] = useState([]);
@@ -45,7 +46,10 @@ function Home({ isAuth }) {
                       deletePost(post.id);
                     }}
                   >
-                    &#128465;
+                    {/* &#128465; */}
+                    <DeleteOutlineRoundedIcon
+                      sx={{ color: "white", fontSize: 40 }}
+                    />
                   </button>
                 )}
               </div>
