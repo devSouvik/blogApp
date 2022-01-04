@@ -119,7 +119,7 @@ function CreatePost({ isAuth }) {
 
     <>
       <div className="container">
-        <h1 className="articleHeading">Write your story here . . .</h1>
+        <h1>lets write something . . .</h1>
         <Box
           sx={{
             width: 500,
@@ -128,7 +128,7 @@ function CreatePost({ isAuth }) {
         >
           <TextField
             fullWidth
-            label="Story Title"
+            label="Post Title"
             id="storyTitle"
             InputLabelProps={{
               className: classes.labelText,
@@ -156,7 +156,6 @@ function CreatePost({ isAuth }) {
           <Editor setPostText={setPostText} />
         </div>
       </div>
-      {postText}
       <Button
         variant="contained"
         style={{ float: "right", marginRight: "5%", marginTop: 20 }}

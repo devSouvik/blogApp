@@ -1,15 +1,26 @@
 import JoditEditor from "jodit-react";
 import { useRef } from "react";
+import "../../App.css";
 
 export default function Editor({ setPostText }) {
   const editor = useRef(null);
+  const config = {
+    controls: {
+      font: {
+        list: {
+          "Roboto Medium,Arial,sans-serif": "Roboto",
+          "charter, Georgia, Cambria, Times new Roman ,Times, serif": "charter",
+        },
+      },
+    },
+  };
 
   return (
     <div>
       <JoditEditor
         ref={editor}
+        config={config}
         tabIndex={1} // tabIndex of textarea
-        // onBlur={(newContent) => setContent(newContent)} // preferred to use only this option to update the content for performance reasons
         onChange={(content) => {
           setPostText(content);
         }}

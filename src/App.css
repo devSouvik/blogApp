@@ -162,9 +162,16 @@ textarea {
   width: 100%;
 }
 
+@font-face {
+  font-family: headingFont;
+  src: url("https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon&display=swap");
+}
+
 .postHeader .title {
   flex: 90%;
+  font-family: headingFont;
 }
+
 .postHeader .deletePost {
   flex: 10%;
   display: flex;
