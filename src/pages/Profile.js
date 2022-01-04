@@ -8,6 +8,7 @@ function Profile({ isAuth }) {
         <div className="card">
           <img
             src={auth.currentUser.photoURL}
+            alt=""
             style={{
               width: "50%",
               borderRadius: "50%",

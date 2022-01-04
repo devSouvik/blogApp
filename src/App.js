@@ -27,11 +27,11 @@ function App() {
           <Link to="/login">Login</Link>
         ) : (
           <>
+            <Link to="/createpost">Create Post</Link>
+            <Link to="/profile">Profile</Link>
             <span onClick={signuUserOut} className="signOut">
               Sign out
             </span>
-            <Link to="/createpost">Create Post</Link>
-            <Link to="/profile">Profile</Link>
           </>
         )}
       </nav>
